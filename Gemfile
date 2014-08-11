@@ -1,5 +1,7 @@
 source 'http://ruby.taobao.org/'
 
+ruby '2.1.2'
+
 group :development, :test do
   gem 'sqlite3'
   gem 'rspec-rails'
