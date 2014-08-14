@@ -1,20 +1,29 @@
 source 'http://ruby.taobao.org/'
 
-
+gem 'bootstrap-sass'
 
 group :development, :test do
-  gem 'sqlite3'
   gem 'rspec-rails'
+  gem 'guard-rspec'
+  gem 'sqlite3'
 end
 
 group :test do
   gem 'selenium-webdriver'
   gem 'capybara'
+
+# Spork 只加载一次环境，然后会为后续的测试维护一个进程池,Spork 结合 Guard.
+  gem 'spork-rails'
+  gem 'guard-spork'
+  gem 'childprocess'
+
 end
 
 group :production do
   gem 'pg'
 end
+
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.4'
